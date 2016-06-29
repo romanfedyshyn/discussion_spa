@@ -21,6 +21,7 @@
         $scope.id = (localStorage.getItem('id') !== null && localStorage.getItem('items') !== []) ? JSON.parse($scope.savedId) : 0;
         // Create empty array, what we used for save our choose commens. What belong to the item with the same id's
         $scope.commentsShow = [];
+        $scope.thisId;
 
         $scope.addItem = function() {
                 // When create new item we add a id for her
@@ -43,6 +44,18 @@
             // Remove comments wich belong for this item
             $scope.showComments = [];
             localStorage.setItem('showComments', JSON.stringify($scope.showComments));
+
+// if our items array are empty, we must remove comments array and id value must be zero
+            if ($scope.items.length == 0) {
+// remove comments array
+                $scope.comments = [];
+                localStorage.setItem('comments', JSON.stringify($scope.comments));
+// 'id' value equel 0
+                $scope.id = 0;
+                localStorage.setItem('id', JSON.stringify($scope.id));
+// it's for wright display into comments block-header
+                $scope.thisId = "";
+            }
         };
 
         // Function for add logic when we choose item
