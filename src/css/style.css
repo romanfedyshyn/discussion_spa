@@ -5,6 +5,7 @@
     min-height: 800px;
     font: 16pt 'Open Sans', sans-serif;
     height: 100vh;
+    max-height: auto;
 }
 
 
