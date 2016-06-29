@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Empeek Test Task</title>
+
+    <!-- Add external font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
+
+    <!-- Add a little style for all :) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- Announce our App -->
+
+<body ng-app="empeekApp">
+
+    <!-- Announce our controller. Here we doing magic :) -->
+    <div id="wrapper" ng-controller="addNewItem">
+
+        <!-- Sidebar block start -->
+        <div id="sidebar">
+            <h2 class="block-header">Main</h2>
+            <div class="default-theme">
+                <span>Overview</span>
+            </div>
+        </div>
+        <!-- Sidebar block end -->
+
+        <!-- Items block start -->
+        <div class="items">
+            <!-- Title of our block -->
+            <h2 class="block-header">Items</h2>
+            <!-- Form for adding new items -->
+            <form class="add-new-item-form" ng-submit="addItem()">
+                <input type="text" class="new-item-input" placeholder="Type name here…" ng-model="itemText">
+                <input type="submit" value="Add new" class="add-btn">
+            </form>
+
+            <!-- Our item list. With comments counter and delete btn -->
+            <ul class="items-list">
+                <li class="item" ng-repeat="item in items track by $index" ng-click="selectItem(item)">
+                    <span class="item-title">{{item.text}}</span>
+                    <span class="comment-count">{{item.count}}</span>
+                    <!-- Button for delete item -->
+                    <button class="delete-btn" ng-click="deleteItem()">Delete</button>
+                </li>
+            </ul>
+        </div>
+        <!-- Items block end -->
+
+        <!-- Comments block start -->
+        <div class="comments">
+            <!-- Title for comments block -->
+            <h2 class="block-header">Comments #{{thisId.id}}</h2>
+            <!-- Our comments list -->
+            <ul class="comments-list">
+                <li class="comment" ng-repeat="comment in showComments track by $index">
+                    <!-- image for our user. (I guess:)) -->
+                    <div class="comment-img"></div>
+                    <!-- Comment-body -->
+                    <p class="comment-body">{{comment.text}}</p>
+                </li>
+            </ul>
+
+            <!-- Block for adding a new comment -->
+            <div class="new-comment-block">
+                <!-- Img for new comment user -->
+                <div class="new-comment-img"></div>
+                <!-- Form for creating comment. It's must to be better -->
+                <form ng-submit="addComment()" class="add-new-comment-form">
+                    <input class="add-new-comment" type="text" class="new-comment-input" ng-model="commentText">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Comments block end -->
+
+    <!-- Extra files for our SPA working -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <!-- Our main js file -->
+    <script src="app/components/core.js"></script>
+</body>
+
+</html>

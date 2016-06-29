@@ -1,0 +1,331 @@
+/* Our wrapper style */
+
+#wrapper {
+    width: 100%;
+    height: 800px;
+    font: 16pt 'Open Sans', sans-serif;
+}
+
+
+/* Styles for sidebar block */
+
+#sidebar {
+    position: relative;
+    width: 20%;
+    float: left;
+    border: 0.5px solid black;
+    background-color: #2B2f3e;
+    min-height: 100%;
+}
+
+
+/* Styles for all blocks header */
+
+.block-header {
+    color: #565A69;
+    font: 1.4em 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+
+/* Some extra style for sidebar block header */
+
+#sidebar .block-header {
+    padding: 10%;
+}
+
+
+/* Style for default theme at sidebar block */
+
+.default-theme {
+    position: relative;
+    background-color: #ff3254;
+    width: 100%;
+    height: 57px;
+    margin-top: 10%;
+    color: white;
+    font-weight: 300;
+}
+
+.default-theme span {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+}
+
+
+/* end */
+
+
+/* Item block styles */
+
+.items {
+    float: left;
+    width: 45%;
+    margin: 3% 0 1% 2%;
+    box-shadow: 0px 1px 5px 1px rgba(133, 133, 133, 1);
+}
+
+.items .block-header {
+    padding: 3% 3% 0 6%;
+}
+
+.items .add-new-item-form {
+    padding: 3% 3% 2% 6%;
+}
+
+.items .items-list {
+    padding: 0 3% 3% 6%;
+}
+
+.items .items-list .item {
+    font: 1rem 'Open Sans', sans-serif;
+    padding: 5% 0 5% 0%;
+    border-bottom: 1px solid #b7b7b7;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+.items .delete-btn {
+    float: right;
+}
+
+.add-btn {
+    background: #27CCC0;
+    width: 25%;
+    height: 38px;
+    padding: 2%;
+    color: #fff;
+    font: 1rem 'Open Sans', sans-serif;
+    border-radius: 3px;
+    border: 1px solid #27CCC0;
+    float: right;
+}
+
+.new-item-input,
+.add-new-comment {
+    display: inline-block;
+    box-sizing: content-box;
+    width: 65%;
+    height: 37px;
+    border: 1px solid #b7b7b7;
+    border-radius: 3px;
+    font: 1rem "Open Sans", sans-serif;
+    color: rgba(0, 142, 198, 1);
+    text-overflow: clip;
+    padding: 0 1.5% 0 1.5%;
+}
+
+.delete-btn {
+    background: #fff;
+    width: 15%;
+    height: 38px;
+    padding: 2%;
+    color: #FF305A;
+    font: 1rem 'Open Sans', sans-serif;
+    border-radius: 3px;
+    border: 1px solid #FF305A;
+    float: right;
+}
+
+.comment-count {
+    background-color: #27CCC0;
+    border-radius: 40%;
+    padding: 1%;
+    color: #fff;
+    font: 0.8rem 'Open Sans', sans-serif;
+}
+
+
+/* end styles for items block */
+
+
+/* start comments bloc styles */
+
+.comments {
+    width: 30%;
+    float: left;
+    margin: 3% 0 1% 1%;
+    box-shadow: 0px 1px 5px 1px rgba(133, 133, 133, 1);
+    padding: 1% 0 1% 1%;
+}
+
+.comments .block-header,
+.comments-list,
+.new-comment-block {
+    padding: 3% 3% 0 6%;
+}
+
+.new-comment-block,
+li.comment {
+    clear: both;
+    border-bottom: 1px solid #b7b7b7;
+}
+
+.new-comment-block,
+li.comment:first-child {
+    border: none;
+}
+
+.comment-img,
+.new-comment-img {
+    width: 53px;
+    height: 53px;
+    float: left;
+    margin: 1% 4% 0 0;
+    background-color: yellow;
+}
+
+.comment-body {
+    font: 0.75rem 'Open Sans', sans-serif;
+    line-height: 1rem;
+    float: right;
+    width: 80%;
+    margin: 5% 0 5% 0;
+}
+
+.comment-img {
+    margin: 5% 0 5% 0;
+}
+
+
+/* end of comments block styles */
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
