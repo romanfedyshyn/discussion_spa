@@ -16,7 +16,7 @@ gulp.task('add', function(){
 });
 
 gulp.task('commit', function(){
-  return gulp.src(['./src/*.html', './src/css/*.css', './src/app/*.js', 'gulpfile.js', 'package.json', 'server.js'])
+  return gulp.src('./*')
     .pipe(git.commit('hotfix'));
 });
 
