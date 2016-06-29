@@ -20,6 +20,20 @@ gulp.task('commit', function(){
     .pipe(git.commit('hotfix'));
 });
 
+gulp.task('push-gh', function(){
+  git.push('origin', 'master', function (err) {
+    if (err) throw err;
+  });
+});
+
+gulp.task('push-heroku', function(){
+  git.push('heroku', 'master', function (err) {
+    if (err) throw err;
+  });
+});
+
+gulp.task('build', ['add', 'commit', 'push-heroku', 'push-gh']);
+
 gulp.task('watch', function() {
     gulp.watch(['./src/app/*.js'], ['jshint']);
 });
