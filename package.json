@@ -4,7 +4,7 @@
     "description": "test task for front-end position",
     "main": "main.js",
     "scripts": {
-        "test": "node server.js"
+        "start": "node server.js"
     },
     "author": "Roman Fedyshyn",
     "license": "ISC",
