@@ -175,8 +175,12 @@ li.comment:first-child {
     width: 53px;
     height: 53px;
     float: left;
-    margin: 1% 4% 0 0;
+    margin: 0% 4% 0 0;
     background-color: yellow;
+}
+
+.add-new-comment {
+    height: 90px;
 }
 
 .comment-body {
