@@ -1,18 +1,25 @@
 var gulp = require('gulp'),
-	jshint = require('gulp-jshint'),
-	stylish = require('jshint-stylish');
+    jshint = require('gulp-jshint'),
+    stylish = require('jshint-stylish'),
+	git = require('gulp-git');
 
-	// concat = require('gulp-concat')
-	// minify = require('gulp-minify'),
-	// del = require('del');
-
-gulp.task('jshint', function () {
-	return gulp.src(['./src/app/components/*.js'])
-		.pipe(jshint())
-		.pipe(jshint.reporter(stylish))
-		.pipe(jshint.reporter('fail'));
+gulp.task('jshint', function() {
+    return gulp.src(['./src/app/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter(stylish))
+        .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('watch', function () {
-	gulp.watch(['./src/app/components/*.js'], ['jshint']);
+gulp.task('add', function(){
+  return gulp.src(['./src/*.html', './src/css/*.css', './src/app/*.js', 'gulpfile.js', 'package.json', 'server.js'])
+    .pipe(git.add());
+});
+
+gulp.task('commit', function(){
+  return gulp.src(['./src/*.html', './src/css/*.css', './src/app/*.js', 'gulpfile.js', 'package.json', 'server.js'])
+    .pipe(git.commit('hotfix'));
+});
+
+gulp.task('watch', function() {
+    gulp.watch(['./src/app/*.js'], ['jshint']);
 });
