@@ -189,6 +189,17 @@ li.comment:first-child {
     margin: 5% 0 5% 0;
 }
 
+@media screen and (min-width: 1600px) {
+    .add-btn {
+        max-height: 38px;
+        padding-bottom: 5%;
+    }
+    .delete-btn {
+        max-height: 38px;
+        padding-bottom: 5%;
+    }
+}
+
 
 /* end of comments block styles */
 
