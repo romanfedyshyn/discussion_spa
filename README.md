@@ -2,10 +2,12 @@
 
 For start app please clone or download this repo, and type into your teminal
 
-``` npm install
-``` node server
+```shell
+npm install
+node server
+ ``` 
 
-Than go to [here]http://localhost:8080/ into your browser, and teat my app :)
+Than go to [here](http://localhost:8080/) into your browser, and teat my app :)
 
-Or you can go to [heroku]https://simple-discussion-spa.herokuapp.com/ and test this there )
+Or you can go to [heroku](https://simple-discussion-spa.herokuapp.com/) and test this there )
 ###Thank you for watching.
