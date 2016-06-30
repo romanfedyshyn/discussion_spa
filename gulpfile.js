@@ -16,7 +16,7 @@ gulp.task('add', function(){
 });
 
 gulp.task('commit', function(){
-  return gulp.src('./*')
+  return gulp.src(['./src/*.html', './src/css/*.css', './src/app/*.js', 'gulpfile.js', 'package.json', 'server.js'])
     .pipe(git.commit('hotfix'));
 });
 
@@ -31,8 +31,6 @@ gulp.task('push-heroku', function(){
     if (err) throw err;
   });
 });
-
-gulp.task('build', ['add', 'commit', 'push-heroku', 'push-gh']);
 
 gulp.task('watch', function() {
     gulp.watch(['./src/app/*.js'], ['jshint']);

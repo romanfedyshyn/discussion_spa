@@ -65,7 +65,7 @@
     margin: 3% 0 1% 2%;
     box-shadow: 0px 1px 5px 1px rgba(133, 133, 133, 1);
     max-height: 93.5vh;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 .items .block-header {
@@ -152,7 +152,7 @@
     box-shadow: 0px 1px 5px 1px rgba(133, 133, 133, 1);
     padding: 1% 0 1% 1%;
     max-height: 90vh;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 .comments .block-header,
