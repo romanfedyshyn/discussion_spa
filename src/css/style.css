@@ -200,11 +200,11 @@ li.comment:first-child {
     line-height: 1rem;
     float: right;
     width: 80%;
-    margin: 5% 0 5% 0;
+    margin: 5% 0 1% 0;
 }
 
 .comment-img {
-    margin: 5% 0 5% 0;
+    margin: 5% 0 2% 0;
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 2048px) {
