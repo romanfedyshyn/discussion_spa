@@ -24,18 +24,18 @@
         $scope.thisId = "";
 
         $scope.addItem = function() {
-                // When create new item we add a id for her
-                $scope.id = +(localStorage.getItem('id'));
-                // push new Item into our item array
-                $scope.items.push({ text: $scope.itemText, count: 0, id: $scope.id += 1 });
-                // set our id into localStorage. for normal adding for future items, after reload page too.
-                localStorage.setItem('id', JSON.stringify(this.id));
-                // delete a text from input
-                $scope.itemText = "";
-                // set our not empty array into localStorage 
-                localStorage.setItem('items', JSON.stringify($scope.items));
-            };
-            // Function for delete item
+            // When create new item we add a id for her
+            $scope.id = +(localStorage.getItem('id'));
+            // push new Item into our item array
+            $scope.items.push({ text: $scope.itemText, count: 0, id: $scope.id += 1 });
+            // set our id into localStorage. for normal adding for future items, after reload page too.
+            localStorage.setItem('id', JSON.stringify(this.id));
+            // delete a text from input
+            $scope.itemText = "";
+            // set our not empty array into localStorage 
+            localStorage.setItem('items', JSON.stringify($scope.items));
+        };
+        // Function for delete item
         $scope.deleteItem = function() {
             // delete item from item array
             $scope.items.splice(this.$index, 1);
@@ -45,17 +45,24 @@
             $scope.showComments = [];
             localStorage.setItem('showComments', JSON.stringify($scope.showComments));
 
-// if our items array are empty, we must remove comments array and id value must be zero
+            // if our items array are empty, we must remove comments array and id value must be zero
             if ($scope.items.length === 0) {
-// remove comments array
+                // remove comments array
                 $scope.comments = [];
                 localStorage.setItem('comments', JSON.stringify($scope.comments));
-// 'id' value equel 0
+                // 'id' value equel 0
                 $scope.id = 0;
                 localStorage.setItem('id', JSON.stringify($scope.id));
-// it's for wright display into comments block-header
+                // it's for wright display into comments block-header
                 $scope.thisId = "";
             }
+        };
+// Function wich add style for selected item
+        $scope.addClass = function() {
+            $('body').on('click', 'li.item', function() {
+                $("ul li").removeClass('selected');
+                $(this).addClass('selected');
+            });
         };
 
         // Function for add logic when we choose item
@@ -71,6 +78,9 @@
                 localStorage.setItem('showComments', JSON.stringify($scope.showComments));
             }
             localStorage.getItem('showComments');
+
+
+
             // function for adding new comment
             $scope.addComment = function() {
                 // count of our comments for each item
@@ -85,9 +95,9 @@
                 $scope.commentText = "";
                 // choose comments wich belong for this item
                 $scope.showComments = $scope.comments.filter(function(comment) {
-                        return comment.id === $scope.thisId;
-                    });
-                    // create a choose array from all of comments
+                    return comment.id === $scope.thisId;
+                });
+                // create a choose array from all of comments
                 if ($scope.showComments.length > 0) {
                     localStorage.setItem('showComments', JSON.stringify($scope.showComments));
                 }

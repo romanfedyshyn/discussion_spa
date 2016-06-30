@@ -40,11 +40,12 @@
 
             <!-- Our item list. With comments counter and delete btn -->
             <ul class="items-list">
-                <li class="item" ng-repeat="item in items track by $index" ng-click="selectItem(item)">
-                    <span class="item-title">{{item.text}}</span>
-                    <span class="comment-count">{{item.count}}</span>
-                    <!-- Button for delete item -->
-                    <button class="delete-btn" ng-click="deleteItem()">Delete</button>
+                <li class="item" ng-repeat="item in items track by $index" ng-click="selectItem(item); addClass()">
+                    <div class="border-bot"><span class="item-title">{{item.text}}</span>
+                        <span class="comment-count">{{item.count}}</span>
+                        <!-- Button for delete item -->
+                        <button class="delete-btn" ng-click="deleteItem()">Delete</button>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -83,6 +84,8 @@
 
     <!-- Our main js file -->
     <script src="app/core.js"></script>
+
+    <script src="app/click.js"></script>
 </body>
 
 </html>
